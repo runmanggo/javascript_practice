@@ -16,8 +16,12 @@
     <div id="container">
       <nav>
         <div class="nav-left">
-          <div>
-            <img onclick="sideBarBtn('block')" src="./assets/list.svg" alt="" />
+          <div id="nav-left-list">
+            <img
+              onclick="sideBarBtn('block'),sideList('none')"
+              src="./assets/list.svg"
+              alt=""
+            />
           </div>
           <div><img src="./assets/heart.svg" alt="" /> Weekly planner</div>
         </div>
@@ -36,7 +40,7 @@
           <div class="side-bar-txt">망꼬의 blog</div>
           <div class="side-bar-arrow">
             <img
-              onclick="sideBarBtn('none')"
+              onclick="sideBarBtn('none'),sideList('block')"
               src="./assets/chevron-double-left.svg"
               alt=""
             />
@@ -51,8 +55,12 @@
     </div>
 
     <script>
-      function sideBarBtn(good) {
-        document.getElementById("side-bar-btn").style.display = good;
+      function sideBarBtn(bad) {
+        document.getElementById("side-bar-btn").style.display = bad;
+      }
+
+      function sideList(good) {
+        document.getElementById("nav-left-list").style.display = good;
       }
     </script>
   </body>
