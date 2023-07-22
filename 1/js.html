@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="alert-box" id="alert">
+            알림창
+            <button onclick="Modal('none')">close</button>
+        </div>
+        <button onclick="Modal('block')">open</button>
+
+        <div class="alert-box-id_all">
+            <button onclick="buttonId('block')">1번</button>
+            <div id="alert-box-id">id 입력하세요</div>
+        </div>
+
+        <div class="alert-box-id_all2">
+            <button onclick="buttonPw('block')">2번</button>
+            <div id="alert-box-pw">비번 입력하세요</div>
+        </div>
+
+        <script>
+            function buttonId(good) {
+                document.getElementById('alert-box-id').style.display = good
+            }
+
+            function buttonPw(pw) {
+                document.getElementById('alert-box-pw').style.display = pw
+            }
+
+            function Modal(a) {
+                document.getElementById('alert').style.display = a
+            }
+
+            /*function closeModal(구멍) {
+        document.getElementById("alert").style.display = 구멍;
+      }
+      function openModal(b) {
+        document.getElementById("alert").style.display = b;
+      }*/
+        </script>
+    </body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.js"
+      integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+      crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="custom.css" />
+    <title>Manggo.Shopping</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>Manggo.Shopping</header>
+      <nav>
+        <div class="li_list">
+          <i class="fa-solid fa-bars"></i>
+          <ul id="nav-list">
+            <li>Best</li>
+            <li>Outer</li>
+            <li>Top</li>
+            <li>Bottom</li>
+            <li>Acc</li>
+          </ul>
+        </div>
+        <button class="nav_left">
+          <i
+            class="fas fa-solid fa-magnifying-glass"
+            style="color: #4d4d4d"></i>
+          <input type="text" placeholder="" />
+        </button>
+      </nav>
+      <main>
+        <section class="right_box">
+          <button class="previous">
+            <i class="fa-solid fa-chevron-left" style="color: #4d4d4d"></i>
+          </button>
+          <div class="album">
+            <div class="images">
+              <img src="./assets/옷1.jpg" />
+              <img src="./assets/옷2.jpg" />
+              <img src="./assets/옷1.jpg" />
+              <img src="./assets/옷2.jpg" />
+            </div>
+          </div>
+          <button class="next">
+            <i class="fa-solid fa-angle-right" style="color: #4d4d4d"></i>
+          </button>
+        </section>
+        <section class="left_box">
+          <h4>BASIC LOGO KNIT</h4>
+          <div class="left_box_info">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam alias
+            aliquid, voluptatum natus earum quidem libero at, culpa omnis
+            ratione illum iste quod similique officia distinctio totam
+            consectetur impedit repudiandae?
+          </div>
+          <select class="form-select">
+            <option>색상</option>
+            <option>사이즈</option>
+          </select>
+          <select class="form-select option">
+            <option>크림</option>
+            <option>소라</option>
+          </select>
+          <div class="left_box_btn">
+            <button class="left_box_btn_buy">바로구매</button>
+            <button class="left_box_btn_shopping">
+              <i
+                class="fa-solid fa-bag-shopping fa-2xl"
+                style="color: #4d4d4d"></i>
+            </button>
+            <button class="left_box_btn_heart">
+              <i class="fa-solid fa-heart fa-2xl" style="color: #4d4d4d"></i>
+            </button>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <div class="tab-menu-container">
+          <ul class="list">
+            <li class="tab-button current">상품정보</li>
+            <li class="tab-button">사이즈</li>
+            <li class="tab-button">문의</li>
+          </ul>
+          <div class="tab-content show">
+            <p>상품정보임다.</p>
+          </div>
+          <div class="tab-content">
+            <p>사이즈정보임다.</p>
+          </div>
+          <div class="tab-content">
+            <p>문의임다.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      $(".fa-bars").on("click", function () {
+        $("#nav-list").css("display", "flex");
+      });
+
+      $(".form-select")
+        .eq(0)
+        .on("input", function () {
+          let value = $(".form-select").eq(0).val();
+          let formSelect = "";
+
+          if (value == "사이즈") {
+            formSelect = "<option>S</option><option>M</option>";
+          } else if (value == "색상") {
+            formSelect = "<option>크림</option><option>소다</option>";
+          }
+          $(".form-select").eq(1).removeClass("option").html(formSelect);
+        });
+
+      const move = $(".tab-button");
+      const tapInfo = $(".tab-content");
+
+      for (let i = 0; i < move.length; i++) {
+        move.eq(i).on("click", function () {
+          move.removeClass("current");
+          move.eq(i).addClass("current");
+          tapInfo.removeClass("show");
+          tapInfo.eq(i).addClass("show");
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="item-box1">
+      <div>
+        Holy guacamole! you should check in om some of those fileds below.
+      </div>
+      <div onclick="closeX('none')"><img src="x-lg.svg" alt="" /></div>
+    </div>
+    <div id="item-box2">
+      <div>
+        Holy guacamole! you should check in om some of those fileds below.
+      </div>
+      <div onclick="closeXX('none')"><img src="x-lg.svg" alt="" /></div></div>
+    </div>
+    <div id="item-box3">
+      <div>
+        Holy guacamole! you should check in om some of those fileds below.
+      </div>
+      <div onclick="closeXXX('none')"><img src="x-lg.svg" alt="" /></div></div>
+    </div>
+    <div id="item-btn"><button onclick="openBtn('flex'), ">띄우기</button></div>
+  </body>
+
+
+
+<script>
+function closeX (close){
+document.getElementById('item-box1').style.display=close
+}
+function closeXX (close1){
+    document.getElementById('item-box2').style.display=close1
+    }
+    function closeXXX (close2){
+        document.getElementById('item-box3').style.display=close2
+        }
+
+function openBtn (open){
+    document.getElementById('item-box1').style.display=open
+}
+function openBtnn (open1){
+    document.getElementById('item-box1').style.display=open1
+}
+function openBtnnn (open2){
+    document.getElementById('item-box1').style.display=open2
+}
+
+
+</script>
+
+</html>

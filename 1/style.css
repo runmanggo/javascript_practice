@@ -1,0 +1,24 @@
+.alert-box {
+  display: none;
+  background-color: skyblue;
+  padding: 20px;
+  color: white;
+  border-radius: 5px;
+}
+
+.alert-box-id_all,
+.alert-box-id_all2 {
+  display: flex;
+}
+
+#alert-box-id,
+#alert-box-pw {
+  display: none;
+  width: 200px;
+  height: 30px;
+  background-color: rgb(89, 89, 134);
+  color: whitesmoke;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
