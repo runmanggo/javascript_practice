@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>사이드바</title>
+  </head>
+  <body>
+    <div id="container">
+      <nav>
+        <div class="nav-left">
+          <div id="nav-left-list">
+            <img
+              onclick="sideBarBtn('block'),sideList('none')"
+              src="./assets/list.svg"
+              alt=""
+            />
+          </div>
+          <div><img src="./assets/heart.svg" alt="" /> Weekly planner</div>
+        </div>
+        <div class="nav-right">
+          <div>2023년 6월 27일</div>
+          <div>공유</div>
+          <div class="nav-right-star">
+            <img src="./assets/star.svg" alt="" />
+          </div>
+        </div>
+      </nav>
+
+      <aside id="side-bar-btn">
+        <div class="side-bar-btn1">
+          <div class="side-bar-cat"><img src="./assets/cat.jpg" alt="" /></div>
+          <div class="side-bar-txt">망꼬의 blog</div>
+          <div class="side-bar-arrow">
+            <img
+              onclick="sideBarBtn('none'),sideList('block')"
+              src="./assets/chevron-double-left.svg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="side-bar-btn2">검색</div>
+        <div class="side-bar-btn3">업데이트</div>
+        <div class="side-bar-btn4">설정과 멤버</div>
+        <div class="side-bar-btn5">방문 수</div>
+        <div class="side-bar-btn6">새 페이지</div>
+      </aside>
+    </div>
+
+    <script>
+      function sideBarBtn(bad) {
+        document.getElementById("side-bar-btn").style.display = bad;
+      }
+
+      function sideList(good) {
+        document.getElementById("nav-left-list").style.display = good;
+      }
+    </script>
+  </body>
+</html>
