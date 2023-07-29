@@ -20,6 +20,7 @@ addBtn.addEventListener("click", function () {
 
     li.style.cursor = "pointer";
     input.value = "";
+    input.focus();
   }
 });
 
