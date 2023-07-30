@@ -64,6 +64,7 @@
           <select class="form-select">
             <option>색상</option>
             <option>사이즈</option>
+            <option>바지</option>
           </select>
           <select class="form-select option">
             <option>크림</option>
@@ -107,6 +108,7 @@
         $("#nav-list").css("display", "flex");
       });
 
+      let pants = [28, 30, 32];
       $(".form-select")
         .eq(0)
         .on("input", function () {
@@ -114,9 +116,13 @@
           let formSelect = "";
 
           if (value == "사이즈") {
-            formSelect = "<option>S</option><option>M</option>";
+            formSelect += "<option>S</option><option>M</option>";
           } else if (value == "색상") {
-            formSelect = "<option>크림</option><option>소다</option>";
+            formSelect += "<option>크림</option><option>소다</option>";
+          } else if (value == "바지") {
+            pants.forEach(function (a) {
+              formSelect += `<option>${a}</option>`;
+            });
           }
           $(".form-select").eq(1).removeClass("option").html(formSelect);
         });
