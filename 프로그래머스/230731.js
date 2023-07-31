@@ -15,3 +15,5 @@ function solution(array, height) {
   const answer1 = count.length;
   return answer1;
 }
+// 필터를 사용해서 조건에 true인 아이들만 모음
+// 위와 같이 모은 값들을 인덱스 갯수로 나오겠금 함
