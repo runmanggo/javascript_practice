@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <button class="btn">click!</button>
+      <div class="row"></div>
+    </div>
+    <script>
+      var products = [
+        { id: 0, price: 70000, title: "Blossom Dress" },
+        { id: 1, price: 50000, title: "Springfield Shirt" },
+        { id: 2, price: 60000, title: "Black Monastery" },
+      ];
+
+      products.forEach((a, i) => {
+        let cardList1 = `<div class="col-sm-4">
+           <img src="https://via.placeholder.com/600" class="w-100" />
+           <h5>${a.title}</h5>
+           <p>가격: ${a.price}</p>
+         </div>`;
+
+        $(".row").append(cardList1);
+      });
+
+      $.get("https://codingapple1.github.io/js/more1.json").done(function (
+        data
+      ) {
+        data.forEach((data, i) => {
+          let cardList2 = `<div class="col-sm-4">
+           <img src="https://via.placeholder.com/600" class="w-100" />
+           <h5>${data.title}</h5>
+           <p>가격: ${data.price}</p>
+         </div>`;
+
+          $(".row").append(cardList2);
+        });
+      });
+
+      $(".btn").on("click", function () {
+        if ($(".row").css("display") == "none") {
+          $(".row").show();
+        } else {
+          $(".row").hide();
+        }
+      });
+    </script>
+  </body>
+</html>
