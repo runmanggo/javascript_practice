@@ -22,3 +22,7 @@ function solution(my_string) {
   var answer = [...my_string].reverse().join("");
   return answer;
 }
+
+/**Spread  > 객체 혹은 배열을 펼칠 수 있다
+ * > 기존의 것은 건들지 않고 새로운 객체를 만들때 사용
+ */
