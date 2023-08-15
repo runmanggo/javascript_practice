@@ -1,8 +1,7 @@
 # javascript_practice
-Javascript 연습장
+<span style="font-size:13px">javascript_practice의 전체적인 요약글</span>\
+
 ---
-# javascript_practice
-<span style="font-size:13px">javascript_practice의 전체적인 요약글</span>
 
 ### 1) 🖤 To-do
 - 동적으로 DOM을 생성하여, 생성된 태그들을 개별 삭제 만드려고 삽질을 열심히 한 결과 물입니다.
