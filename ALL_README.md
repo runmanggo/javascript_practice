@@ -1,5 +1,5 @@
 # javascript_practice
-<span style="font-size:13px">javascript_practice의 전체적인 요약글</span>\
+<span style="font-size:13px">javascript_practice의 전체적인 요약글</span>
 
 ---
 
