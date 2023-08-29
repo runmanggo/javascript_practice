@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="clickBtn">클릭하시오</button>
+    <script>
+      /**
+               * Q. HTML 페이지 내에 버튼 아무거나 하나 만들고
+      그걸 클릭하면 성공하는 Promise를 만들고 싶습니다.
+      성공하면 콘솔창에 '성공했어요'를 출력하고요.
+      어떻게 코드를 짜면 될까요?
+      (async, await이 필요하면 써봅시다)
+              */
+
+      // Promise으로 풀이
+
+      const clickBtn = document.getElementById("clickBtn");
+
+      //   const BtnPromise = new Promise((resolve, reject) => {
+      //     clickBtn.addEventListener("click", () => {
+      //       resolve();
+      //     });
+      //   });
+
+      //   BtnPromise.then(function () {
+      //     console.log("성공");
+      //   });
+
+      // async 와 await 으로 풀이
+      clickBtn.addEventListener("click", async () => {
+        await 클클릭();
+      });
+
+      function 클릭() {
+        return new Promise((resolve, reject) => {
+          resolve("성공했슴다");
+        });
+      }
+
+      async function 클클릭() {
+        let resultClick = await 클릭();
+        console.log(resultClick);
+      }
+    </script>
+  </body>
+</html>
