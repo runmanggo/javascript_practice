@@ -7,15 +7,37 @@ function solution(rny_string) {
 // i -> 영문 대소문자를 무시, 모두 일치하는 패턴 검색 ignore
 
 //평행
+/** 
+ * [a : [x1, y1] b: [x2, y2] c: [x3, y3] d:[x4, y4]]
+ * 케이스 1 (a,b / c,d): [x1, y1], [x2, y2] / [x3, y3] [x4, y4]
+ * 케이스 2 (a,c / b,d) : [x1, y1],[x3, y3] /[x2, y2],[x4, y4]
+ * 케이스 3 (c,d / a,d) : [x3, y3],[x4, y4] /[x1, y1],[x4, y4]
+*/
 function solution(dots) {
-  let arr = [];
+  // 직선의 기울기 (y1 - y2) / (x1 - x2)
 
-  for (let i = 0; i < dots.length; i++) {
-    for (let j = i + 1; j < dots.length; j++) {
-      const curLean = (dots[i][1] - dots[j][1]) / (dots[i][0] - dots[j][0]);
-      if (arr.includes(curLean)) return 1;
-      arr.push(curLean);
-    }
+  let answer = 0;
+  
+  let a = Math.abs(dots[0][1] - dots[1][1]) / Math.abs(dots[0][0] - dots[1][0]); 
+  let b = Math.abs(dots[2][1] - dots[3][1]) / Math.abs(dots[2][0] - dots[3][0]);
+  //((a,b / c,d))
+  if (a - b === 0) {
+      answer = 1;
   }
-  return 0;
+  
+  let c = Math.abs(dots[0][1] - dots[2][1]) / Math.abs(dots[0][0] - dots[2][0]);
+  let d = Math.abs(dots[1][1] - dots[3][1]) / Math.abs(dots[1][0] - dots[3][0]);
+  //(a,c / b,d)
+  if (c - d === 0) {
+      answer = 1;
+  }
+  
+  let e = Math.abs(dots[0][1] - dots[3][1]) / Math.abs(dots[0][0] - dots[3][0]);
+  let f = Math.abs(dots[1][1] - dots[2][1]) / Math.abs(dots[1][0] - dots[2][0]);
+  //(c,d / a,d)
+  if (e - f === 0) {
+      answer = 1;
+  }
+  
+  return answer;
 }
