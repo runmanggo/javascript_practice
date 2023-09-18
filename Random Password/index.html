@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <title>랜덤 비번!</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        Generate a<br />
+        <span>Random Password</span>
+      </h1>
+      <div class="display">
+        <input type="text" id="password" placeholder="Password" />
+        <img src="copy.svg" onclick="copyPassword()" />
+      </div>
+      <button onclick="createPassword()">
+        <img src="/shuffle.svg" alt="" />Generate Password
+      </button>
+    </div>
+    <script>
+      const passwordBox = document.getElementById("password");
+      const length = 12;
+      const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      const lowerCase = "abcdefghijklmnopqrstuvwxyz";
+      const number = "0123456789";
+      const symbol = "~!@#$%^&*_-+=`|\\(){}[]:;<>,.?/";
+
+      const alChars = upperCase + lowerCase + number + symbol;
+      console.log(upperCase.length);
+
+      function createPassword() {
+        let password = "";
+        password += upperCase[Math.floor(Math.random() * upperCase.length)];
+        password += lowerCase[Math.floor(Math.random() * lowerCase.length)];
+        password += number[Math.floor(Math.random() * number.length)];
+        password += symbol[Math.floor(Math.random() * symbol.length)];
+        while (length > password.length) {
+          password += alChars[Math.floor(Math.random() * alChars.length)];
+        }
+        passwordBox.value = password;
+      }
+
+      function copyPassword() {
+        passwordBox.select();
+        document.execCommand("copy");
+      }
+
+      /**
+       * Math.random() 함수는 0 이상 1 미만의 무작위 실수를 반환합니다. 예를 들어, 0.564321.
+       * 이 실수에 upperCase.length (26)을 곱합니다. 이 예에서는 0.564321 * 26 = 14.682346.
+       * Math.floor() 함수를 사용하여 소수점 이하의 값을 제거하고 가장 가까운 정수로 내립니다. 따라서 randomIndex는 14가 됩니다.
+       * upperCase 문자열에서 14번째(0부터 시작하므로 실제로는 15번째) 문자 'O'를 선택합니다.
+       *
+       */
+    </script>
+  </body>
+</html>
