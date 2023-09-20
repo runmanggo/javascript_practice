@@ -75,7 +75,7 @@ function solution(letter) {
 
   for (const morseWord of morseWords) {
     if (morse[morseWord]) {
-      answer += morse[morseWord];
+      answer += morse[morseWord]; //letter를 공백을 기준으로 분할하여 morseWords 배열에 저장
     } else {
       answer += " ";
     }
@@ -86,7 +86,7 @@ function solution(letter) {
 //치킨 쿠폰
 function solution(chicken) {
   let answer = 0;
-  if (chicken > 0) {
+  if (chicken > 10) {
     answer += Math.floor(chicken / 10);
-  }
+  } else
 }
