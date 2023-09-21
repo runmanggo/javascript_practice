@@ -85,8 +85,11 @@ function solution(letter) {
 
 //치킨 쿠폰
 function solution(chicken) {
-  let answer = 0;
-  if (chicken > 10) {
-    answer += Math.floor(chicken / 10);
-  } else
+  let result = 0;
+
+  while (chicken >= 10) {
+    result += Math.floor(chicken / 10);
+    chicken = (chicken % 10) + Math.floor(chicken / 10);
+  }
+  return result;
 }
