@@ -5,4 +5,6 @@ function greetUser(userName = "유저") {
 greetUser("덩윤");
 greetUser();
 
-function sumUp() {}
+function sumUp() {
+  
+}
