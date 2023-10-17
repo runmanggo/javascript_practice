@@ -37,7 +37,7 @@ function solution(n) {
   let arr = [];
 
   for (let i = 1; i < 1000; i++) {
-    if (i % 3 !== 0 && !i.toString().split("").includes("3")) {
+    if (i % 3 !== 0 && !i.toString().includes("3")) {
       arr.push(i);
     }
     // 3의 배수가 아니거나, 3이 포함되지 않은 글자들을 arr에 넣음
